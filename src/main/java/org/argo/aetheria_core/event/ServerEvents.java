@@ -17,7 +17,8 @@ public class ServerEvents {
     public static void onMobSpawn(FinalizeSpawnEvent event) {
         ResourceLocation id = BuiltInRegistries.ENTITY_TYPE.getKey(event.getEntity().getType());
 
-        if (!id.getNamespace().contains("aetheria") && event.getEntity().getType().getCategory() == MobCategory.MONSTER) {
+        if (!id.getNamespace().contains("aetheria")
+                && event.getEntity().getType().getCategory() == MobCategory.MONSTER) {
             event.setSpawnCancelled(true);
         }
     }
